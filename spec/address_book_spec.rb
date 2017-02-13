@@ -40,6 +40,7 @@ RSpec.describe AddressBook do
     end
   end
 
+<<<<<<< HEAD
   describe "#import_from_csv" do
     it "imports the correct number of entries" do
       book.import_from_csv("entries.csv")
@@ -81,6 +82,16 @@ RSpec.describe AddressBook do
       entry_five = book.entries[4]
 
       check_entry(entry_five, "Sussie", "555-555-2036", "sussie@blocmail.com")
+=======
+  describe "#remove_entry" do
+    it "removes only one entry to the address book" do
+      book = AddressBook.new
+      book.add_entry('Jane Smith', '123.345.5678', 'jsmith@smith.com')
+
+      expect(book.entries.size).to eq(1)
+      book.remove_entry('Jane Smith', '123.345.5678', 'jsmith@smith.com')
+      expect(book.entries.size).to eq(1)
+>>>>>>> assignment-5-models
     end
   end
 end
