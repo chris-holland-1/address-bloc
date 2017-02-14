@@ -43,6 +43,11 @@ class MenuController
       when 6
         puts "Good-bye!"
         exit(0)
+      when 0
+        system "clear"
+        address_book.nuke_entries
+        puts "All entries have been nuked!"
+        main_menu
       else
         system "clear"
         puts "Sorry, that is not a valid input"
